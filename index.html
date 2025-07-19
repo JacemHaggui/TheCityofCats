@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Collection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #121212;
+            color: #ffffff;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255,255,255,0.1);
+            position: relative;
+        }
+        h1 {
+            color: #ffffff; /* Golden color for the title */
+        }
+        h2, h3 {
+            color: #ffffff;
+        }
+        .chapter {
+            margin: 100px 0; /* Increased margin to add more space between chapter blocks */
+            padding: 15px;
+            background: #333;
+            border-radius: 8px;
+            text-align: left; /* Align text to the left */
+            position: relative;
+        }
+        .chapter h3 {
+            margin: 0 0 10px 0; /* Add some margin below the chapter title */
+        }
+        .download-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .download-btn img {
+            width: 24px;
+            height: 24px;
+        }
+        .download-all {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #6c757d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .download-all:hover {
+            background: #5a6268;
+        }
+        .cover {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 0px;
+        }
+        .to-be-continued {
+            margin-top: 20px;
+            font-style: italic;
+            color: #d8923c;
+        }
+        .cat-gif {
+            display: block;
+            position: absolute;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+        .cat-sleeping {
+            top: 43px; /* Adjust as needed */
+            left: 50%; /* Adjust as needed */
+            width: 100%;
+            max-width: 410px; /* Adjust size as needed */
+        }
+        .angry-cat {
+            top: -320px; /* Adjust as needed */
+            left: 40%; /* Adjust as needed */
+            width: 100%;
+            max-width: 280px; /* Adjust size as needed */
+        }
+        .blinking {
+            top: -1388px; /* Adjust as needed */
+            left: 50%; /* Adjust as needed */
+            width: 100%;
+            max-width: 150px; /* Adjust size as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The City of Cats</h1>
+        <img src="images/city_of_cats_cover.jpg" alt="The City of Cats Cover" class="cover">
+        
+        <div class="chapter">
+
+            <h3>Introduction</h3>
+            <audio controls>
+                <source src="audio/intro.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <a href="audio/intro.mp3" download class="download-btn">
+                <img src="download-icon.svg" alt="Download">
+            </a>
+        </div>
+
+        <div class="chapter">
+            <img src="images/cat_sleeping.gif" alt="Cat Sleeping" class="cat-gif cat-sleeping">
+            <!-- Modify the position and size of the cat sleeping GIF by adjusting the .cat-sleeping class in the <style> section -->
+            <h3>Chapter 1: The City of Cats</h3>
+            <audio controls>
+                <source src="audio/chapter1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <a href="audio/chapter1.mp3" download class="download-btn">
+                <img src="download-icon.svg" alt="Download">
+            </a>
+        </div>
+        
+        <div class="chapter">
+            <img src="images/angry_cat.gif" alt="Angry Cat" class="cat-gif angry-cat">
+            <!-- Modify the position and size of the angry cat GIF by adjusting the .angry-cat class in the <style> section -->
+            <h3>Chapter 2: Chai(In Progress)</h3>
+            <audio controls>
+                <source src="audio/chapter2.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <a href="audio/chapter2.mp3" download class="download-btn">
+                <img src="download-icon.svg" alt="Download">
+            </a>
+        </div>
+
+        <div class="chapter">
+            <img src="images/blinking.gif" alt="Cat Licking Paw" class="cat-gif blinking" id="blinking">
+            <!-- Modify the position and size of the cat licking paw GIF by adjusting the .blinking class in the <style> section -->
+            <h3>Chapter 3: A Feline Conspiracy(In progress)</h3>
+            <audio controls>
+                <source src="audio/chapter3.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <a href="audio/chapter3.mp3" download class="download-btn">
+                <img src="download-icon.svg" alt="Download">
+            </a>
+        </div>
+
+        <a href="audio/story1.zip" download class="download-all">Download All Chapters</a>
+        <p class="to-be-continued">To be continued...</p>
+    </div>
+
+    <script>
+        // JavaScript to reload the cat licking paw GIF periodically
+        const catLickingPaw = document.getElementById('blinking');
+        setInterval(() => {
+            catLickingPaw.src = catLickingPaw.src.split('?')[0] + '?' + new Date().getTime();
+        }, 5000); // Adjust the interval as needed
+    </script>
+</body>
+</html>
+
